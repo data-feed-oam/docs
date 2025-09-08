@@ -343,9 +343,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exchange" class="md-nav__link">
+  <a href="#event-exchange" class="md-nav__link">
     <span class="md-ellipsis">
-      Exchange
+      Event Exchange
     </span>
   </a>
   
@@ -362,6 +362,33 @@
       
         <li class="md-nav__item">
   <a href="#message-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#player-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Player Exchange
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-keys_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing Keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-format_1" class="md-nav__link">
     <span class="md-ellipsis">
       Message Format
     </span>
@@ -441,29 +468,77 @@
 <p>Updates are delivered through <strong>RabbitMQ</strong>.</p>
 <h2 id="connection">Connection</h2>
 <ul>
-<li>Protocol: AMQP 0.9.1  </li>
-<li>Host: <code>rabbit.example.com</code>  </li>
-<li>Port: <code>5672</code>  </li>
-<li>VHost: <code>/feed</code>  </li>
-<li>Username/Password: provided by support  </li>
+<li>Protocol: AMQP 0.9.1</li>
+<li>Host: <code>rabbit.example.com</code></li>
+<li>Port: <code>5672</code></li>
+<li>VHost: <code>/</code></li>
+<li>Username/Password: provided by support</li>
 </ul>
-<h2 id="exchange">Exchange</h2>
+<h2 id="event-exchange">Event Exchange</h2>
 <ul>
-<li><code>feed.exchange</code> (type: <code>topic</code>)  </li>
+<li><code>&lt;client&gt;-event</code> (type: <code>topic</code>)</li>
 </ul>
 <h2 id="routing-keys">Routing Keys</h2>
 <ul>
-<li><code>soccer.event.update</code>  </li>
-<li><code>basketball.event.update</code>  </li>
-<li><code>tennis.event.update</code>  </li>
-<li><code>soccer.player.update</code>, etc.  </li>
+<li><code>event.&lt;bookmakerID&gt;</code></li>
 </ul>
 <h2 id="message-format">Message Format</h2>
-<p>Example JSON:</p>
-<p>Headers:</p>
-<pre><code>bid: 2
-op: U
+<p>Example JSON:
+Headers:
+op: 'U' upsert | 'D' delete</p>
+<pre><code class="language-json">{
+  &quot;_id&quot;: 60941915,
+  &quot;name&quot;: &quot;Paris Saint-Germain - Tottenham Hotspur&quot;,
+  &quot;tournament&quot;: &quot;UEFA Super Cup&quot;,
+  &quot;tournamentId&quot;: 465,
+  &quot;category&quot;: &quot;International Clubs&quot;,
+  &quot;categoryId&quot;: 393,
+  &quot;sport&quot;: &quot;Soccer&quot;,
+  &quot;sportId&quot;: 1,
+  &quot;date&quot;: 1755111600000,
+  &quot;bookmakers&quot;: {
+    &quot;1&quot;: {
+      &quot;eventId&quot;: &quot;2561&quot;,
+      &quot;playability&quot;: 1,
+      &quot;markets&quot;: {
+        &quot;1&quot;: {
+          &quot;sign&quot;: {
+            &quot;1&quot;: {
+              &quot;outcomePosition&quot;: 1,
+              &quot;backOdd&quot;: 1.43,
+              &quot;updt&quot;: 1748914576019
+            },
+            &quot;2&quot;: {
+              &quot;outcomePosition&quot;: 2,
+              &quot;backOdd&quot;: 4.8,
+              &quot;updt&quot;: 1748914576019
+            },
+            &quot;3&quot;: {
+              &quot;outcomePosition&quot;: 3,
+              &quot;backOdd&quot;: 6.4,
+              &quot;updt&quot;: 1748914576019
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;_expdt&quot;: &quot;2025-08-13T19:00:00&quot;
+}
 </code></pre>
+<h2 id="player-exchange">Player Exchange</h2>
+<ul>
+<li><code>&lt;client&gt;-player</code> (type: <code>topic</code>)</li>
+</ul>
+<h2 id="routing-keys_1">Routing Keys</h2>
+<ul>
+<li><code>player.&lt;sportID&gt;.&lt;bookmakerID&gt;</code></li>
+</ul>
+<h2 id="message-format_1">Message Format</h2>
+<p>Example JSON:</p>
+<p>Headers:
+bid: bookmakerID
+op: 'U' upsert | 'D' delete</p>
 <p>Message:</p>
 <pre><code class="language-json">{
   &quot;id&quot;: &quot;34694653&quot;,
