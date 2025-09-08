@@ -20,7 +20,7 @@
     
     
       
-        <title>Esempi - Feed Quote Sportive</title>
+        <title>Esempi - Betting Feed Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#esempi-di-utilizzo" class="md-skip">
+        <a href="#demo-usage" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Feed Quote Sportive" class="md-header__button md-logo" aria-label="Feed Quote Sportive" data-md-component="logo">
+    <a href=".." title="Betting Feed Documentation" class="md-header__button md-logo" aria-label="Betting Feed Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -92,7 +92,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Feed Quote Sportive
+            Betting Feed Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -178,13 +178,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Feed Quote Sportive" class="md-nav__button md-logo" aria-label="Feed Quote Sportive" data-md-component="logo">
+    <a href=".." title="Betting Feed Documentation" class="md-nav__button md-logo" aria-label="Betting Feed Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Feed Quote Sportive
+    Betting Feed Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -419,11 +419,11 @@
 
 
 
-<h1 id="esempi-di-utilizzo">Esempi di utilizzo</h1>
+<h1 id="demo-usage">Demo usage</h1>
 <h2 id="python-client-snapshot">Python Client - Snapshot</h2>
 <pre><code class="language-python">import requests
 
-url = &quot;https://api.example.com/snapshot/events/soccer/bwin&quot;
+url = &quot;https://api.example.com/events/soccer/bwin&quot;
 resp = requests.get(url)
 print(resp.json())
 </code></pre>
@@ -441,9 +441,11 @@ channel.exchange_declare(exchange=&quot;feed.exchange&quot;, exchange_type=&quot
 queue = channel.queue_declare(&quot;&quot;, exclusive=True).method.queue
 channel.queue_bind(exchange=&quot;feed.exchange&quot;, queue=queue, routing_key=&quot;soccer.event.update&quot;)
 
+
 def callback(ch, method, properties, body):
     data = json.loads(body)
     print(&quot;Ricevuto:&quot;, data)
+
 
 channel.basic_consume(queue=queue, on_message_callback=callback, auto_ack=True)
 print(&quot;In attesa di messaggi...&quot;)

@@ -20,7 +20,7 @@
     
     
       
-        <title>API REST - Feed Quote Sportive</title>
+        <title>API REST - Betting Feed Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-rest-snapshot" class="md-skip">
+        <a href="#rest-api-snapshot" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Feed Quote Sportive" class="md-header__button md-logo" aria-label="Feed Quote Sportive" data-md-component="logo">
+    <a href=".." title="Betting Feed Documentation" class="md-header__button md-logo" aria-label="Betting Feed Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -92,7 +92,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Feed Quote Sportive
+            Betting Feed Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -178,13 +178,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Feed Quote Sportive" class="md-nav__button md-logo" aria-label="Feed Quote Sportive" data-md-component="logo">
+    <a href=".." title="Betting Feed Documentation" class="md-nav__button md-logo" aria-label="Betting Feed Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Feed Quote Sportive
+    Betting Feed Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -312,46 +312,79 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#endpoint-principale" class="md-nav__link">
+  <a href="#main-endpoint-for-events" class="md-nav__link">
     <span class="md-ellipsis">
-      Endpoint Principale
+      Main Endpoint for Events
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Endpoint Principale">
+    <nav class="md-nav" aria-label="Main Endpoint for Events">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parametri" class="md-nav__link">
+  <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Parametri
+      Parameters
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#risposte" class="md-nav__link">
+  <a href="#responses" class="md-nav__link">
     <span class="md-ellipsis">
-      Risposte
+      Responses
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-endpoint-for-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main Endpoint for players
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Endpoint for players">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#esempio" class="md-nav__link">
+  <a href="#parameters_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Esempio
+      Parameters
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#documentazione-interattiva" class="md-nav__link">
+  <a href="#responses_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Documentazione Interattiva
+      Responses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Documentation
     </span>
   </a>
   
@@ -452,30 +485,191 @@
 
 
 
-<h1 id="api-rest-snapshot">API REST - Snapshot</h1>
-<p>Le API REST sono esposte via HTTPS.</p>
-<h2 id="endpoint-principale">Endpoint Principale</h2>
-<pre><code>GET /snapshot/{product}/{sport}/{bookmaker}
+<h1 id="rest-api-snapshot">REST API - Snapshot</h1>
+<p>The REST APIs are exposed over HTTPS.</p>
+<h2 id="main-endpoint-for-events">Main Endpoint for Events</h2>
+<pre><code>GET /event/bookmaker/{bookmaker}
 </code></pre>
-<h3 id="parametri">Parametri</h3>
+<h3 id="parameters">Parameters</h3>
 <ul>
-<li><code>product</code>: <code>events</code> | <code>extra</code> | <code>player</code></li>
+<li><code>bookmaker</code>: string identifier of the bookmaker</li>
+</ul>
+<h3 id="responses">Responses</h3>
+<ul>
+<li><strong>200 OK</strong>: JSON with snapshot</li>
+<li><strong>400 Bad Request</strong>: invalid parameters</li>
+<li><strong>403 Forbidden</strong>: unauthorized IP</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;status&quot;: 1,
+  &quot;data&quot;: [
+    {
+      &quot;_id&quot;: 61060755,
+      &quot;date&quot;: 1757854800000,
+      &quot;name&quot;: &quot;Atalanta BC - US Lecce&quot;,
+      &quot;tournamentId&quot;: 23,
+      &quot;tournament&quot;: &quot;Serie A&quot;,
+      &quot;categoryId&quot;: 31,
+      &quot;category&quot;: &quot;Italy&quot;,
+      &quot;sportId&quot;: 1,
+      &quot;sport&quot;: &quot;Soccer&quot;,
+      &quot;bookmakers&quot;: {
+        &quot;0&quot;: {
+          &quot;eventId&quot;: &quot;123123&quot;,
+          &quot;playability&quot;: 1,
+          &quot;markets&quot;: {
+            &quot;1&quot;: {
+              &quot;sign&quot;: {
+                &quot;1&quot;: {
+                  &quot;outcomePosition&quot;: 1,
+                  &quot;backOdd&quot;: 1.42,
+                  &quot;updt&quot;: 1757318539218
+                },
+                &quot;2&quot;: {
+                  &quot;outcomePosition&quot;: 2,
+                  &quot;backOdd&quot;: 4.75,
+                  &quot;updt&quot;: 1757318539218
+                },
+                &quot;3&quot;: {
+                  &quot;outcomePosition&quot;: 3,
+                  &quot;backOdd&quot;: 6.75,
+                  &quot;updt&quot;: 1757318539218
+                }
+              }
+            },
+            &quot;2&quot;: {
+              &quot;sign&quot;: {
+                &quot;2&quot;: {
+                  &quot;outcomePosition&quot;: 2,
+                  &quot;backOdd&quot;: 1.68,
+                  &quot;updt&quot;: 1757318539218
+                },
+                &quot;3&quot;: {
+                  &quot;outcomePosition&quot;: 3,
+                  &quot;backOdd&quot;: 2.05,
+                  &quot;updt&quot;: 1757318539218
+                }
+              }
+            },
+            &quot;9&quot;: {
+              &quot;sign&quot;: {
+                &quot;2&quot;: {
+                  &quot;outcomePosition&quot;: 2,
+                  &quot;backOdd&quot;: 1.9,
+                  &quot;updt&quot;: 1757318539218
+                },
+                &quot;3&quot;: {
+                  &quot;outcomePosition&quot;: 3,
+                  &quot;backOdd&quot;: 1.8,
+                  &quot;updt&quot;: 1757318539218
+                }
+              }
+            },
+            &quot;11&quot;: {
+              &quot;sign&quot;: {
+                &quot;2&quot;: {
+                  &quot;outcomePosition&quot;: 2,
+                  &quot;backOdd&quot;: 1.19,
+                  &quot;updt&quot;: 1757318539218
+                },
+                &quot;3&quot;: {
+                  &quot;outcomePosition&quot;: 3,
+                  &quot;backOdd&quot;: 4.05,
+                  &quot;updt&quot;: 1757318539218
+                }
+              }
+            },
+            &quot;12&quot;: {
+              &quot;sign&quot;: {
+                &quot;2&quot;: {
+                  &quot;outcomePosition&quot;: 2,
+                  &quot;backOdd&quot;: 2.75,
+                  &quot;updt&quot;: 1757318539218
+                },
+                &quot;3&quot;: {
+                  &quot;outcomePosition&quot;: 3,
+                  &quot;backOdd&quot;: 1.38,
+                  &quot;updt&quot;: 1757318539218
+                }
+              }
+            },
+            &quot;13&quot;: {
+              &quot;sign&quot;: {
+                &quot;2&quot;: {
+                  &quot;outcomePosition&quot;: 2,
+                  &quot;backOdd&quot;: 5.0,
+                  &quot;updt&quot;: 1757318539218
+                },
+                &quot;3&quot;: {
+                  &quot;outcomePosition&quot;: 3,
+                  &quot;backOdd&quot;: 1.12,
+                  &quot;updt&quot;: 1757318539218
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+<h2 id="main-endpoint-for-players">Main Endpoint for players</h2>
+<pre><code>GET /player/{sport}/{bookmaker}
+</code></pre>
+<h3 id="parameters_1">Parameters</h3>
+<ul>
 <li><code>sport</code>: <code>soccer</code> | <code>basketball</code> | <code>tennis</code></li>
-<li><code>bookmaker</code>: stringa identificativa del bookmaker</li>
+<li><code>bookmaker</code>: string identifier of the bookmaker</li>
 </ul>
-<h3 id="risposte">Risposte</h3>
+<h3 id="parameters_2">Parameters</h3>
 <ul>
-<li><strong>200 OK</strong>: JSON con snapshot</li>
-<li><strong>400 Bad Request</strong>: parametri invalidi</li>
-<li><strong>403 Forbidden</strong>: IP non autorizzato</li>
+<li><code>bookmaker</code>: string identifier of the bookmaker</li>
 </ul>
-<h3 id="esempio">Esempio</h3>
-<pre><code class="language-bash">curl https://api.example.com/snapshot/events/soccer/bwin
+<h3 id="responses_1">Responses</h3>
+<ul>
+<li><strong>200 OK</strong>: JSON with snapshot</li>
+<li><strong>400 Bad Request</strong>: invalid parameters</li>
+<li><strong>403 Forbidden</strong>: unauthorized IP</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;status&quot;: 1,
+  &quot;data&quot;: {
+    &quot;56328439&quot;: {
+      &quot;id&quot;: 56328439,
+      &quot;players&quot;: {
+        &quot;13827311&quot;: {
+          &quot;id&quot;: &quot;13827311&quot;,
+          &quot;betradarId&quot;: null,
+          &quot;name&quot;: &quot;Naz Hillmon&quot;,
+          &quot;shortName&quot;: &quot;N. Hillmon&quot;,
+          &quot;fullName&quot;: &quot;Naz Hillmon&quot;,
+          &quot;markets&quot;: {
+            &quot;Points&quot;: {
+              &quot;10.5&quot;: {
+                &quot;O&quot;: {
+                  &quot;odd&quot;: 2.0,
+                  &quot;updt&quot;: 1757310612739,
+                  &quot;bSelectionId&quot;: null,
+                  &quot;bMarketId&quot;: null,
+                  &quot;marketTV&quot;: null,
+                  &quot;runnerTV&quot;: null
+                }
+              }
+            }
+          },
+          &quot;_value&quot;: 1.0,
+          &quot;team&quot;: &quot;H&quot;
+        }
+      }
+    }
+  }
+}
+
 </code></pre>
-<h3 id="documentazione-interattiva">Documentazione Interattiva</h3>
+<h3 id="interactive-documentation">Interactive Documentation</h3>
 <ul>
-<li>Swagger UI: <a href="https://api.example.com/docs">https://api.example.com/docs</a></li>
-<li>OpenAPI JSON: <a href="https://api.example.com/openapi.json">https://api.example.com/openapi.json</a></li>
+<li>Swagger UI: <a href="https://odd-monitor.github.io/docs/swagger/">https://odd-monitor.github.io/docs/swagger/</a></li>
 </ul>
 
 

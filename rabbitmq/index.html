@@ -20,7 +20,7 @@
     
     
       
-        <title>RabbitMQ Feed - Feed Quote Sportive</title>
+        <title>RabbitMQ Feed - Betting Feed Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aggiornamenti-via-rabbitmq" class="md-skip">
+        <a href="#updates-via-rabbitmq" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Feed Quote Sportive" class="md-header__button md-logo" aria-label="Feed Quote Sportive" data-md-component="logo">
+    <a href=".." title="Betting Feed Documentation" class="md-header__button md-logo" aria-label="Betting Feed Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -92,7 +92,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Feed Quote Sportive
+            Betting Feed Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -178,13 +178,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Feed Quote Sportive" class="md-nav__button md-logo" aria-label="Feed Quote Sportive" data-md-component="logo">
+    <a href=".." title="Betting Feed Documentation" class="md-nav__button md-logo" aria-label="Betting Feed Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Feed Quote Sportive
+    Betting Feed Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -334,9 +334,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#connessione" class="md-nav__link">
+  <a href="#connection" class="md-nav__link">
     <span class="md-ellipsis">
-      Connessione
+      Connection
     </span>
   </a>
   
@@ -361,9 +361,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#formato-messaggi" class="md-nav__link">
+  <a href="#message-format" class="md-nav__link">
     <span class="md-ellipsis">
-      Formato Messaggi
+      Message Format
     </span>
   </a>
   
@@ -437,39 +437,84 @@
 
 
 
-<h1 id="aggiornamenti-via-rabbitmq">Aggiornamenti via RabbitMQ</h1>
-<p>Gli aggiornamenti sono inviati tramite <strong>RabbitMQ</strong>.</p>
-<h2 id="connessione">Connessione</h2>
+<h1 id="updates-via-rabbitmq">Updates via RabbitMQ</h1>
+<p>Updates are delivered through <strong>RabbitMQ</strong>.</p>
+<h2 id="connection">Connection</h2>
 <ul>
-<li>Protocollo: AMQP 0.9.1</li>
-<li>Host: <code>rabbit.example.com</code></li>
-<li>Porta: <code>5672</code></li>
-<li>VHost: <code>/feed</code></li>
-<li>Utente/password: forniti dal supporto</li>
+<li>Protocol: AMQP 0.9.1  </li>
+<li>Host: <code>rabbit.example.com</code>  </li>
+<li>Port: <code>5672</code>  </li>
+<li>VHost: <code>/feed</code>  </li>
+<li>Username/Password: provided by support  </li>
 </ul>
 <h2 id="exchange">Exchange</h2>
 <ul>
-<li><code>feed.exchange</code> (tipo: <code>topic</code>)</li>
+<li><code>feed.exchange</code> (type: <code>topic</code>)  </li>
 </ul>
 <h2 id="routing-keys">Routing Keys</h2>
 <ul>
-<li><code>soccer.event.update</code></li>
-<li><code>basketball.event.update</code></li>
-<li><code>tennis.event.update</code></li>
-<li><code>soccer.player.update</code>, ecc.</li>
+<li><code>soccer.event.update</code>  </li>
+<li><code>basketball.event.update</code>  </li>
+<li><code>tennis.event.update</code>  </li>
+<li><code>soccer.player.update</code>, etc.  </li>
 </ul>
-<h2 id="formato-messaggi">Formato Messaggi</h2>
-<p>Esempio JSON:</p>
+<h2 id="message-format">Message Format</h2>
+<p>Example JSON:</p>
+<p>Headers:</p>
+<pre><code>bid: 2
+op: U
+</code></pre>
+<p>Message:</p>
 <pre><code class="language-json">{
-  &quot;event_id&quot;: &quot;12345&quot;,
-  &quot;bookmaker&quot;: &quot;bwin&quot;,
-  &quot;market&quot;: &quot;1x2&quot;,
-  &quot;odds&quot;: {
-    &quot;home&quot;: 1.85,
-    &quot;draw&quot;: 3.20,
-    &quot;away&quot;: 4.50
-  },
-  &quot;timestamp&quot;: &quot;2025-09-05T12:30:00Z&quot;
+  &quot;id&quot;: &quot;34694653&quot;,
+  &quot;date&quot;: 1757357100000,
+  &quot;eventId&quot;: 56418485,
+  &quot;bookmaker&quot;: 2,
+  &quot;sportId&quot;: 1,
+  &quot;players&quot;: {
+    &quot;7016132&quot;: {
+      &quot;id&quot;: &quot;7016132&quot;,
+      &quot;name&quot;: &quot;John Souttar&quot;,
+      &quot;shortName&quot;: &quot;John Souttar&quot;,
+      &quot;fullName&quot;: &quot;John Souttar&quot;,
+      &quot;markets&quot;: {
+        &quot;Goalscorers&quot;: {
+          &quot;#&quot;: {
+            &quot;1st&quot;: {
+              &quot;odd&quot;: 110,
+              &quot;updt&quot;: 1757322314457,
+              &quot;bSelectionId&quot;: &quot;7016132&quot;,
+              &quot;bMarketId&quot;: &quot;1.247409086&quot;,
+              &quot;marketTV&quot;: 48,
+              &quot;runnerTV&quot;: 0
+            }
+          }
+        }
+      },
+      &quot;team&quot;: null
+    },
+    &quot;12977768&quot;: {
+      &quot;id&quot;: &quot;12977768&quot;,
+      &quot;name&quot;: &quot;Scott McTominay&quot;,
+      &quot;shortName&quot;: &quot;Scott McTominay&quot;,
+      &quot;fullName&quot;: &quot;Scott McTominay&quot;,
+      &quot;markets&quot;: {
+        &quot;Goalscorers&quot;: {
+          &quot;#&quot;: {
+            &quot;1st&quot;: {
+              &quot;odd&quot;: 75,
+              &quot;updt&quot;: 1757322314457,
+              &quot;bSelectionId&quot;: &quot;12977768&quot;,
+              &quot;bMarketId&quot;: &quot;1.247409086&quot;,
+              &quot;marketTV&quot;: 48,
+              &quot;runnerTV&quot;: 43
+            }
+          }
+        }
+      },
+      &quot;team&quot;: null
+    }
+  }
 }
 </code></pre>
 

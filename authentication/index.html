@@ -20,7 +20,7 @@
     
     
       
-        <title>Autenticazione - Feed Quote Sportive</title>
+        <title>Autenticazione - Betting Feed Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#autenticazione-sicurezza" class="md-skip">
+        <a href="#authentication-security" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Feed Quote Sportive" class="md-header__button md-logo" aria-label="Feed Quote Sportive" data-md-component="logo">
+    <a href=".." title="Betting Feed Documentation" class="md-header__button md-logo" aria-label="Betting Feed Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -92,7 +92,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Feed Quote Sportive
+            Betting Feed Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -178,13 +178,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Feed Quote Sportive" class="md-nav__button md-logo" aria-label="Feed Quote Sportive" data-md-component="logo">
+    <a href=".." title="Betting Feed Documentation" class="md-nav__button md-logo" aria-label="Betting Feed Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Feed Quote Sportive
+    Betting Feed Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -290,9 +290,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rate-limit" class="md-nav__link">
+  <a href="#rate-limiting" class="md-nav__link">
     <span class="md-ellipsis">
-      Rate Limit
+      Rate Limiting
     </span>
   </a>
   
@@ -410,16 +410,16 @@
 
 
 
-<h1 id="autenticazione-sicurezza">Autenticazione &amp; Sicurezza</h1>
+<h1 id="authentication-security">Authentication &amp; Security</h1>
 <ul>
-<li>L’accesso al servizio è basato su <strong>whitelist IP</strong>.</li>
-<li>Non è richiesta API key o Bearer Token.</li>
-<li>Le chiamate da IP non autorizzati ricevono <code>403 Forbidden</code>.</li>
+<li>Access to the service is based on an <strong>IP whitelist</strong>.  </li>
+<li>No API key or Bearer Token is required.  </li>
+<li>Requests from unauthorized IPs will receive a <code>403 Forbidden</code> response.  </li>
 </ul>
-<h2 id="rate-limit">Rate Limit</h2>
+<h2 id="rate-limiting">Rate Limiting</h2>
 <ul>
-<li>Lato API REST: 100 richieste/minuto per IP.</li>
-<li>Lato RabbitMQ: nessun limite, ma è raccomandata una sola connessione persistente per cliente.</li>
+<li><strong>REST API</strong>: 100 requests per minute per IP.  </li>
+<li><strong>RabbitMQ</strong>: No rate limit, but it is recommended to maintain a single persistent connection per client.  </li>
 </ul>
 
 

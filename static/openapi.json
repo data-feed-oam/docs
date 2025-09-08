@@ -5,7 +5,7 @@
     "version": "0.1.0"
   },
   "paths": {
-    "/v1/external/player/sport/{sport_id}/bookmaker/{bookmaker_id}": {
+    "/player/{sport}/bookmaker/{bookmaker_id}": {
       "get": {
         "tags": [
           "external"
@@ -14,12 +14,12 @@
         "operationId": "get_player_by_bookmaker_v1_external_player_sport__sport_id__bookmaker__bookmaker_id__get",
         "parameters": [
           {
-            "name": "sport_id",
+            "name": "sport",
             "in": "path",
             "required": true,
             "schema": {
               "type": "integer",
-              "title": "Sport Id"
+              "title": "Sport"
             }
           },
           {
@@ -54,7 +54,7 @@
         }
       }
     },
-    "/v1/external/event/bookmaker/{bookmaker_id}": {
+    "/event/bookmaker/{bookmaker_id}": {
       "get": {
         "tags": [
           "external"
