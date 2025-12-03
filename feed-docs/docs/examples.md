@@ -5,7 +5,7 @@
 ```python
 import requests
 
-url = "https://api.example.com/events/soccer/bwin"
+url = "https://external-api.oam.ltd/events/soccer/bwin"
 resp = requests.get(url)
 print(resp.json())
 ```
@@ -16,7 +16,7 @@ print(resp.json())
 import pika, json
 
 connection = pika.BlockingConnection(pika.ConnectionParameters(
-    host="rabbit.example.com", virtual_host="/feed",
+    host="external-rmq.oam.ltd", virtual_host="/feed",
     credentials=pika.PlainCredentials("user", "password")
 ))
 channel = connection.channel()

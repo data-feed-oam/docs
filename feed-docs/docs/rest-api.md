@@ -1,6 +1,6 @@
 # REST API - Snapshot
 
-The REST APIs are exposed over HTTPS.
+The REST APIs are exposed over HTTPS https://external-api.oam.ltd/.
 
 ## Main Endpoint for Events
 
@@ -194,4 +194,4 @@ GET /player/{sport}/{bookmaker}
 
 ### Interactive Documentation
 
-- Swagger UI: [https://odd-monitor.github.io/docs/swagger/](https://odd-monitor.github.io/docs/swagger/)
+- Swagger UI: [https://data-feed-oam.github.io/docs/swagger/](https://data-feed-oam.github.io/docs/swagger/)

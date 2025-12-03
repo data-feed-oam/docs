@@ -1,21 +1,19 @@
 # Updates via RabbitMQ
 
-Updates are delivered through **RabbitMQ**.
+Updates are delivered through **RabbitMQ** .
 
 ## Connection
 
 - Protocol: AMQP 0.9.1
-- Host: `rabbit.example.com`
+- Host: `external-rmq.oam.ltd`
 - Port: `5672`
-- VHost: `/`
+- VHost: `/<client>`
 - Username/Password: provided by support
 
-## Event Exchange
-
-- `<client>-event` (type: `topic`)
+## Event Queue
+- `event`
 
 ## Routing Keys
-
 - `event.<bookmakerID>`
 
 ## Message Format
@@ -66,9 +64,9 @@ op: 'U' upsert | 'D' delete
 }
 ```
 
-## Player Exchange
+## Player Queue
 
-- `<client>-player` (type: `topic`)
+- `player`
 
 ## Routing Keys
 
@@ -136,4 +134,17 @@ Message:
     }
   }
 }
+```
+
+## Extra Queue
+
+- `player`
+
+## Routing Keys
+
+- `extra.<sportID>.<bookmakerID>`
+
+## Message Format
+```json
+TBD
 ```
