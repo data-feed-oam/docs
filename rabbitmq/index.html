@@ -15,8 +15,11 @@
         <link rel="next" href="../examples/">
       
       
+        
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
@@ -24,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -47,7 +50,6 @@
     
       
 
-    
     
     
   </head>
@@ -201,9 +203,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
     
   </span>
+  
   
 
       </a>
@@ -223,9 +230,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Getting Started
+  
+
     
   </span>
+  
   
 
       </a>
@@ -245,9 +257,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Autenticazione
+  
+
     
   </span>
+  
   
 
       </a>
@@ -267,9 +284,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     API REST
+  
+
     
   </span>
+  
   
 
       </a>
@@ -298,9 +320,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     RabbitMQ Feed
+  
+
     
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -311,9 +338,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     RabbitMQ Feed
+  
+
     
   </span>
+  
   
 
       </a>
@@ -336,16 +368,20 @@
         <li class="md-nav__item">
   <a href="#connection" class="md-nav__link">
     <span class="md-ellipsis">
-      Connection
+      
+        Connection
+      
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#event-exchange" class="md-nav__link">
+  <a href="#event-queue" class="md-nav__link">
     <span class="md-ellipsis">
-      Event Exchange
+      
+        Event Queue
+      
     </span>
   </a>
   
@@ -354,7 +390,9 @@
         <li class="md-nav__item">
   <a href="#routing-keys" class="md-nav__link">
     <span class="md-ellipsis">
-      Routing Keys
+      
+        Routing Keys
+      
     </span>
   </a>
   
@@ -363,16 +401,20 @@
         <li class="md-nav__item">
   <a href="#message-format" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Format
+      
+        Message Format
+      
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#player-exchange" class="md-nav__link">
+  <a href="#player-queue" class="md-nav__link">
     <span class="md-ellipsis">
-      Player Exchange
+      
+        Player Queue
+      
     </span>
   </a>
   
@@ -381,7 +423,9 @@
         <li class="md-nav__item">
   <a href="#routing-keys_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Routing Keys
+      
+        Routing Keys
+      
     </span>
   </a>
   
@@ -390,7 +434,42 @@
         <li class="md-nav__item">
   <a href="#message-format_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Format
+      
+        Message Format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extra Queue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-keys_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing Keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-format_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Format
+      
     </span>
   </a>
   
@@ -416,9 +495,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Esempi
+  
+
     
   </span>
+  
   
 
       </a>
@@ -438,9 +522,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     API Reference
+  
+
     
   </span>
+  
   
 
       </a>
@@ -458,6 +547,7 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -465,18 +555,18 @@
 
 
 <h1 id="updates-via-rabbitmq">Updates via RabbitMQ</h1>
-<p>Updates are delivered through <strong>RabbitMQ</strong>.</p>
+<p>Updates are delivered through <strong>RabbitMQ</strong> .</p>
 <h2 id="connection">Connection</h2>
 <ul>
 <li>Protocol: AMQP 0.9.1</li>
-<li>Host: <code>rabbit.example.com</code></li>
+<li>Host: <code>external-rmq.oam.ltd</code></li>
 <li>Port: <code>5672</code></li>
-<li>VHost: <code>/</code></li>
+<li>VHost: <code>/&lt;client&gt;</code></li>
 <li>Username/Password: provided by support</li>
 </ul>
-<h2 id="event-exchange">Event Exchange</h2>
+<h2 id="event-queue">Event Queue</h2>
 <ul>
-<li><code>&lt;client&gt;-event</code> (type: <code>topic</code>)</li>
+<li><code>event</code></li>
 </ul>
 <h2 id="routing-keys">Routing Keys</h2>
 <ul>
@@ -526,9 +616,9 @@ op: 'U' upsert | 'D' delete</p>
   &quot;_expdt&quot;: &quot;2025-08-13T19:00:00&quot;
 }
 </code></pre>
-<h2 id="player-exchange">Player Exchange</h2>
+<h2 id="player-queue">Player Queue</h2>
 <ul>
-<li><code>&lt;client&gt;-player</code> (type: <code>topic</code>)</li>
+<li><code>player</code></li>
 </ul>
 <h2 id="routing-keys_1">Routing Keys</h2>
 <ul>
@@ -592,6 +682,17 @@ op: 'U' upsert | 'D' delete</p>
   }
 }
 </code></pre>
+<h2 id="extra-queue">Extra Queue</h2>
+<ul>
+<li><code>player</code></li>
+</ul>
+<h2 id="routing-keys_2">Routing Keys</h2>
+<ul>
+<li><code>extra.&lt;sportID&gt;.&lt;bookmakerID&gt;</code></li>
+</ul>
+<h2 id="message-format_2">Message Format</h2>
+<pre><code class="language-json">TBD
+</code></pre>
 
 
 
@@ -640,10 +741,11 @@ op: 'U' upsert | 'D' delete</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "toc.integrate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "toc.integrate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
