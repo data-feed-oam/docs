@@ -1,6 +1,6 @@
 # REST API - Snapshot
 
-The REST APIs are exposed over HTTPS https://external-api.oam.ltd/.
+The REST APIs are exposed over HTTPS https://external-api.oam.ltd/v1.
 
 ## Main Endpoint for Events
 

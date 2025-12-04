@@ -5,7 +5,7 @@
 ```python
 import requests
 
-url = "https://external-api.oam.ltd/events/soccer/bwin"
+url = "https://external-api.oam.ltd/v1/event/bookmaker/1"
 resp = requests.get(url)
 print(resp.json())
 ```
