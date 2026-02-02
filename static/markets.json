@@ -1,0 +1,239 @@
+{
+  "1": {
+    "id": 1,
+    "name": "1X2",
+    "outcomes": {
+      "1": {
+        "name": "1"
+      },
+      "2": {
+        "name": "X"
+      },
+      "3": {
+        "name": "2"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 1
+  },
+  "2": {
+    "id": 2,
+    "name": "O/U",
+    "outcomes": {
+      "2": {
+        "name": "Over"
+      },
+      "3": {
+        "name": "Under"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 1
+  },
+  "3": {
+    "id": 3,
+    "name": "H/H",
+    "outcomes": {
+      "1": {
+        "name": "1"
+      },
+      "2": {
+        "name": "2"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 2
+  },
+  "4": {
+    "id": 4,
+    "name": "H/H",
+    "outcomes": {
+      "1": {
+        "name": "1"
+      },
+      "2": {
+        "name": "2"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 5
+  },
+  "9": {
+    "id": 9,
+    "name": "BTTS",
+    "outcomes": {
+      "2": {
+        "name": "Yes"
+      },
+      "3": {
+        "name": "No"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 1
+  },
+  "11": {
+    "id": 11,
+    "name": "O/U 1.5",
+    "outcomes": {
+      "2": {
+        "name": "Over"
+      },
+      "3": {
+        "name": "Under"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 1
+  },
+  "12": {
+    "id": 12,
+    "name": "O/U 3.5",
+    "outcomes": {
+      "2": {
+        "name": "Over"
+      },
+      "3": {
+        "name": "Under"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 1
+  },
+  "13": {
+    "id": 13,
+    "name": "O/U 4.5",
+    "outcomes": {
+      "2": {
+        "name": "Over"
+      },
+      "3": {
+        "name": "Under"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 1
+  },
+  "14": {
+    "id": 14,
+    "name": "1X2 HT",
+    "outcomes": {
+      "1": {
+        "name": "1"
+      },
+      "2": {
+        "name": "X"
+      },
+      "3": {
+        "name": "2"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 1
+  },
+  "15": {
+    "id": 15,
+    "name": "O/U 1.5 HT",
+    "outcomes": {
+      "2": {
+        "name": "Over"
+      },
+      "3": {
+        "name": "Under"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 1
+  },
+  "16": {
+    "id": 16,
+    "name": "TT SET 1",
+    "outcomes": {
+      "1": {
+        "name": "1"
+      },
+      "2": {
+        "name": "2"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 5
+  },
+  "17": {
+    "id": 17,
+    "name": "O/U GAME",
+    "outcomes": {
+      "2": {
+        "name": "Over"
+      },
+      "3": {
+        "name": "Under"
+      }
+    },
+    "hasSbvs": true,
+    "sport": 5
+  },
+  "18": {
+    "id": 18,
+    "name": "T/T HAND. GAME",
+    "outcomes": {
+      "1": {
+        "name": "1"
+      },
+      "2": {
+        "name": "2"
+      }
+    },
+    "hasSbvs": true,
+    "sport": 5
+  },
+  "19": {
+    "id": 19,
+    "name": "SET BETTING",
+    "outcomes": {
+      "2": {
+        "name": "Over"
+      },
+      "3": {
+        "name": "Under"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 5
+  },
+  "20": {
+    "id": 20,
+    "name": "T/T HAND.",
+    "outcomes": {
+      "1": {
+        "name": "1"
+      },
+      "2": {
+        "name": "2"
+      }
+    },
+    "hasSbvs": true,
+    "sport": 2
+  },
+  "21": {
+    "id": 21,
+    "name": "O/U (INCL. TS)",
+    "outcomes": {
+      "2": {
+        "name": "Over"
+      },
+      "3": {
+        "name": "Under"
+      }
+    },
+    "hasSbvs": true,
+    "sport": 2
+  },
+  "22": {
+    "id": 22,
+    "name": "Set Bet",
+    "outcomes": {},
+    "hasSbvs": true,
+    "sport": 2
+  }
+}

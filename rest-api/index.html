@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -422,17 +422,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#interactive-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interactive Documentation
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -725,8 +714,43 @@
   }
 }
 
+## Market &amp; Sign lookup (markets / sign)
+
+In the Events snapshot response, the object `bookmakers.{bookmakerId}.markets` is keyed by a **numeric identifier** (serialized as a JSON string), e.g. `&quot;1&quot;`, `&quot;2&quot;`, `&quot;9&quot;`, etc.
+
+Each market contains a `sign` object, also keyed by a **numeric identifier** (serialized as a JSON string). This signId identifies the market outcome/selection, e.g. `&quot;1&quot;`, `&quot;2&quot;`, `&quot;3&quot;`.
+
+To convert these numeric IDs into human-readable names (market name and outcome names), use the `markets.json` lookup file.
+
+- Download: [markets.json](./static/markets.json)
+
+### How to resolve IDs
+
+- `markets.&lt;marketId&gt;`: resolve the marketId (e.g. `&quot;1&quot;`) via the lookup to get `name`, `outcomes`, `sport`, etc.
+- `markets.&lt;marketId&gt;.sign.&lt;signId&gt;`: resolve the signId (e.g. `&quot;2&quot;`) within the selected market `outcomes` map to get the outcome name (e.g. `&quot;Over&quot;`).
+
+### Example (marketId=1, signId=2)
+
+Given: - `markets[&quot;1&quot;]` → lookup: `name = &quot;1X2&quot;`
+- `sign[&quot;2&quot;]` → lookup within `outcomes[&quot;2&quot;]`: `name = &quot;X&quot;`
+
+### Lookup format (excerpt)
+
+```json
+{
+    &quot;1&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;1X2&quot;,
+        &quot;outcomes&quot;: {
+            &quot;1&quot;: {&quot;name&quot;: &quot;1&quot;},
+            &quot;2&quot;: {&quot;name&quot;: &quot;X&quot;},
+            &quot;3&quot;: {&quot;name&quot;: &quot;2&quot;}
+        },
+        &quot;hasSbvs&quot;: false,
+        &quot;sport&quot;: 1
+    }
+}
 </code></pre>
-<h3 id="interactive-documentation">Interactive Documentation</h3>
 <ul>
 <li>Swagger UI: <a href="https://data-feed-oam.github.io/docs/swagger/">https://data-feed-oam.github.io/docs/swagger/</a></li>
 </ul>
@@ -779,10 +803,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "toc.integrate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
