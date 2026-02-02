@@ -427,6 +427,56 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#market-sign-lookup-markets-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Market &amp; Sign lookup (markets / sign)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Market &amp; Sign lookup (markets / sign)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-resolve-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to resolve IDs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-marketid1-signid2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example (marketId=1, signId=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lookup-format-excerpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lookup format (excerpt)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -713,42 +763,43 @@
     }
   }
 }
-
-## Market &amp; Sign lookup (markets / sign)
-
-In the Events snapshot response, the object `bookmakers.{bookmakerId}.markets` is keyed by a **numeric identifier** (serialized as a JSON string), e.g. `&quot;1&quot;`, `&quot;2&quot;`, `&quot;9&quot;`, etc.
-
-Each market contains a `sign` object, also keyed by a **numeric identifier** (serialized as a JSON string). This signId identifies the market outcome/selection, e.g. `&quot;1&quot;`, `&quot;2&quot;`, `&quot;3&quot;`.
-
-To convert these numeric IDs into human-readable names (market name and outcome names), use the `markets.json` lookup file.
-
-- Download: [markets.json](./static/markets.json)
-
-### How to resolve IDs
-
-- `markets.&lt;marketId&gt;`: resolve the marketId (e.g. `&quot;1&quot;`) via the lookup to get `name`, `outcomes`, `sport`, etc.
-- `markets.&lt;marketId&gt;.sign.&lt;signId&gt;`: resolve the signId (e.g. `&quot;2&quot;`) within the selected market `outcomes` map to get the outcome name (e.g. `&quot;Over&quot;`).
-
-### Example (marketId=1, signId=2)
-
-Given: - `markets[&quot;1&quot;]` → lookup: `name = &quot;1X2&quot;`
-- `sign[&quot;2&quot;]` → lookup within `outcomes[&quot;2&quot;]`: `name = &quot;X&quot;`
-
-### Lookup format (excerpt)
-
-```json
-{
-    &quot;1&quot;: {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;1X2&quot;,
-        &quot;outcomes&quot;: {
-            &quot;1&quot;: {&quot;name&quot;: &quot;1&quot;},
-            &quot;2&quot;: {&quot;name&quot;: &quot;X&quot;},
-            &quot;3&quot;: {&quot;name&quot;: &quot;2&quot;}
-        },
-        &quot;hasSbvs&quot;: false,
-        &quot;sport&quot;: 1
-    }
+</code></pre>
+<h2 id="market-sign-lookup-markets-sign">Market &amp; Sign lookup (markets / sign)</h2>
+<p>In the Events snapshot response, the object <code>bookmakers.{bookmakerId}.markets</code> is keyed by a <strong>numeric identifier</strong> (serialized as a JSON string), e.g. <code>"1"</code>, <code>"2"</code>, <code>"9"</code>, etc.</p>
+<p>Each market contains a <code>sign</code> object, also keyed by a <strong>numeric identifier</strong> (serialized as a JSON string). This signId identifies the market outcome/selection, e.g. <code>"1"</code>, <code>"2"</code>, <code>"3"</code>.</p>
+<p>To convert these numeric IDs into human-readable names (market name and outcome names), use the <code>markets.json</code> lookup file.</p>
+<ul>
+<li>Download: <a href="../static/markets.json">markets.json</a></li>
+</ul>
+<h3 id="how-to-resolve-ids">How to resolve IDs</h3>
+<ul>
+<li><code>markets.&lt;marketId&gt;</code>: resolve the marketId (e.g. <code>"1"</code>) via the lookup to get <code>name</code>, <code>outcomes</code>, <code>sport</code>, etc.</li>
+<li><code>markets.&lt;marketId&gt;.sign.&lt;signId&gt;</code>: resolve the signId (e.g. <code>"2"</code>) within the selected market <code>outcomes</code> map to get the outcome name (e.g. <code>"Over"</code>).</li>
+</ul>
+<h3 id="example-marketid1-signid2">Example (marketId=1, signId=2)</h3>
+<p>Given: - <code>markets["1"]</code> → lookup: <code>name = "1X2"</code></p>
+<ul>
+<li><code>sign["2"]</code> → lookup within <code>outcomes["2"]</code>: <code>name = "X"</code></li>
+</ul>
+<h3 id="lookup-format-excerpt">Lookup format (excerpt)</h3>
+<pre><code class="language-json">{
+  &quot;1&quot;: {
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;1X2&quot;,
+    &quot;outcomes&quot;: {
+      &quot;1&quot;: {
+        &quot;name&quot;: &quot;1&quot;
+      },
+      &quot;2&quot;: {
+        &quot;name&quot;: &quot;X&quot;
+      },
+      &quot;3&quot;: {
+        &quot;name&quot;: &quot;2&quot;
+      }
+    },
+    &quot;hasSbvs&quot;: false,
+    &quot;sport&quot;: 1
+  }
 }
 </code></pre>
 <ul>
