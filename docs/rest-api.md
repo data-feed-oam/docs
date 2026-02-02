@@ -190,8 +190,43 @@ GET /player/{sport}/{bookmaker}
   }
 }
 
+## Market & Sign lookup (markets / sign)
+
+In the Events snapshot response, the object `bookmakers.{bookmakerId}.markets` is keyed by a **numeric identifier** (serialized as a JSON string), e.g. `"1"`, `"2"`, `"9"`, etc.
+
+Each market contains a `sign` object, also keyed by a **numeric identifier** (serialized as a JSON string). This signId identifies the market outcome/selection, e.g. `"1"`, `"2"`, `"3"`.
+
+To convert these numeric IDs into human-readable names (market name and outcome names), use the `markets.json` lookup file.
+
+- Download: [markets.json](./static/markets.json)
+
+### How to resolve IDs
+
+- `markets.<marketId>`: resolve the marketId (e.g. `"1"`) via the lookup to get `name`, `outcomes`, `sport`, etc.
+- `markets.<marketId>.sign.<signId>`: resolve the signId (e.g. `"2"`) within the selected market `outcomes` map to get the outcome name (e.g. `"Over"`).
+
+### Example (marketId=1, signId=2)
+
+Given: - `markets["1"]` → lookup: `name = "1X2"`
+- `sign["2"]` → lookup within `outcomes["2"]`: `name = "X"`
+
+### Lookup format (excerpt)
+
+```json
+{
+    "1": {
+        "id": 1,
+        "name": "1X2",
+        "outcomes": {
+            "1": {"name": "1"},
+            "2": {"name": "X"},
+            "3": {"name": "2"}
+        },
+        "hasSbvs": false,
+        "sport": 1
+    }
+}
 ```
 
-### Interactive Documentation
 
 - Swagger UI: [https://data-feed-oam.github.io/docs/swagger/](https://data-feed-oam.github.io/docs/swagger/)
