@@ -189,6 +189,7 @@ GET /player/{sport}/{bookmaker}
     }
   }
 }
+```
 
 ## Market & Sign lookup (markets / sign)
 
@@ -208,25 +209,31 @@ To convert these numeric IDs into human-readable names (market name and outcome 
 ### Example (marketId=1, signId=2)
 
 Given: - `markets["1"]` → lookup: `name = "1X2"`
+
 - `sign["2"]` → lookup within `outcomes["2"]`: `name = "X"`
 
 ### Lookup format (excerpt)
 
 ```json
 {
-    "1": {
-        "id": 1,
-        "name": "1X2",
-        "outcomes": {
-            "1": {"name": "1"},
-            "2": {"name": "X"},
-            "3": {"name": "2"}
-        },
-        "hasSbvs": false,
-        "sport": 1
-    }
+  "1": {
+    "id": 1,
+    "name": "1X2",
+    "outcomes": {
+      "1": {
+        "name": "1"
+      },
+      "2": {
+        "name": "X"
+      },
+      "3": {
+        "name": "2"
+      }
+    },
+    "hasSbvs": false,
+    "sport": 1
+  }
 }
 ```
-
 
 - Swagger UI: [https://data-feed-oam.github.io/docs/swagger/](https://data-feed-oam.github.io/docs/swagger/)
