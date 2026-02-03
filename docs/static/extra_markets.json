@@ -1,0 +1,811 @@
+{
+  "1X2CN": {
+    "id": "1X2CN",
+    "name": "1X2 Corners",
+    "outcomes": {
+      "1": {
+        "name": "1",
+        "priority": 1
+      },
+      "X": {
+        "name": "X",
+        "priority": 2
+      },
+      "2": {
+        "name": "2",
+        "priority": 3
+      }
+    },
+    "hasSbvs": false
+  },
+  "OUCN": {
+    "id": "OUCN",
+    "name": "U/O Corners",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OUHCN": {
+    "id": "OUHCN",
+    "name": "U/O Corners Home",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OUACN": {
+    "id": "OUACN",
+    "name": "U/O Corners Away",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OU1TCN": {
+    "id": "OU1TCN",
+    "name": "U/O Corners 1T",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OU2TCN": {
+    "id": "OU2TCN",
+    "name": "U/O Corners 2T",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OU1THCN": {
+    "id": "OU1THCN",
+    "name": "U/O Corners 1T Home",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OU2THCN": {
+    "id": "OU2THCN",
+    "name": "U/O Corners 2T Home",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OU1TACN": {
+    "id": "OU1TACN",
+    "name": "U/O Corners 1T Away",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OU2TACN": {
+    "id": "OU2TACN",
+    "name": "U/O Corners 2T Away",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "HNDCN": {
+    "id": "HNDCN",
+    "name": "H/H Corners Handicap",
+    "outcomes": {
+      "1": {
+        "name": "1"
+      },
+      "2": {
+        "name": "2"
+      }
+    },
+    "hasSbvs": true
+  },
+  "HND1TCN": {
+    "id": "HND1TCN",
+    "name": "H/H Corners Handicap 1T",
+    "outcomes": {
+      "1": {
+        "name": "1"
+      },
+      "2": {
+        "name": "2"
+      }
+    },
+    "hasSbvs": true
+  },
+  "TOTALSCN": {
+    "id": "TOTALSCN",
+    "name": "Total Corners",
+    "hasSbvs": false,
+    "outcomes": {
+      "<6": {
+        "name": "<6"
+      },
+      "6-8": {
+        "name": "6-8"
+      },
+      "9-11": {
+        "name": "9-11"
+      },
+      "12-14": {
+        "name": "12-14"
+      },
+      ">14": {
+        "name": ">14"
+      }
+    }
+  },
+  "TOTALSHCN": {
+    "id": "TOTALSHCN",
+    "name": "Total Corners Home",
+    "hasSbvs": false,
+    "outcomes": {
+      "0-2": {
+        "name": "0-2"
+      },
+      "3-4": {
+        "name": "3-4"
+      },
+      "5-6": {
+        "name": "5-6"
+      },
+      ">=7": {
+        "name": ">=7"
+      }
+    }
+  },
+  "TOTALSACN": {
+    "id": "TOTALSACN",
+    "name": "Total Corners Away",
+    "hasSbvs": false,
+    "outcomes": {
+      "0-2": {
+        "name": "0-2"
+      },
+      "3-4": {
+        "name": "3-4"
+      },
+      "5-6": {
+        "name": "5-6"
+      },
+      ">=7": {
+        "name": ">=7"
+      }
+    }
+  },
+  "TOTALS1TCN": {
+    "id": "TOTALS1TCN",
+    "name": "Total Corners 1T",
+    "hasSbvs": false,
+    "outcomes": {
+      "<5": {
+        "name": "<5"
+      },
+      "5-6": {
+        "name": "5-6"
+      },
+      ">6": {
+        "name": ">6"
+      }
+    }
+  },
+  "TOTALS2TCN": {
+    "id": "TOTALS2TCN",
+    "name": "Total Corners 2T",
+    "hasSbvs": false,
+    "outcomes": {
+      "<5": {
+        "name": "<5"
+      },
+      "5-6": {
+        "name": "5-6"
+      },
+      ">6": {
+        "name": ">6"
+      }
+    }
+  },
+  "TOTALS1THCN": {
+    "id": "TOTALS1THCN",
+    "name": "Total Corners 1T Home",
+    "hasSbvs": false,
+    "outcomes": {
+      "0-1": {
+        "name": "0-1"
+      },
+      "2": {
+        "name": "2"
+      },
+      "3": {
+        "name": "3"
+      },
+      ">=4": {
+        "name": ">=4"
+      }
+    }
+  },
+  "TOTALS2THCN": {
+    "id": "TOTALS2THCN",
+    "name": "Total Corners 2T Home",
+    "hasSbvs": false,
+    "outcomes": {
+      "0-1": {
+        "name": "0-1"
+      },
+      "2": {
+        "name": "2"
+      },
+      "3": {
+        "name": "3"
+      },
+      ">=4": {
+        "name": ">=4"
+      }
+    }
+  },
+  "TOTALS1TACN": {
+    "id": "TOTALS1TACN",
+    "name": "Total Corners 1T Away",
+    "hasSbvs": false,
+    "outcomes": {
+      "0-1": {
+        "name": "0-1"
+      },
+      "2": {
+        "name": "2"
+      },
+      "3": {
+        "name": "3"
+      },
+      ">=4": {
+        "name": ">=4"
+      }
+    }
+  },
+  "TOTALS2TACN": {
+    "id": "TOTALS2TACN",
+    "name": "Total Corners 2T Away",
+    "hasSbvs": false,
+    "outcomes": {
+      "0-1": {
+        "name": "0-1"
+      },
+      "2": {
+        "name": "2"
+      },
+      "3": {
+        "name": "3"
+      },
+      ">=4": {
+        "name": ">=4"
+      }
+    }
+  },
+  "1X2CD": {
+    "id": "1X2CD",
+    "name": "1X2 Cards",
+    "outcomes": {
+      "1": {
+        "name": "1",
+        "priority": 1
+      },
+      "X": {
+        "name": "X",
+        "priority": 2
+      },
+      "2": {
+        "name": "2",
+        "priority": 3
+      }
+    },
+    "hasSbvs": false
+  },
+  "OUCD": {
+    "id": "OUCD",
+    "name": "U/O Cards",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OUHCD": {
+    "id": "OUHCD",
+    "name": "U/O Cards Home",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OUACD": {
+    "id": "OUACD",
+    "name": "U/O Cards Away",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OU1TCD": {
+    "id": "OU1TCD",
+    "name": "U/O Cards 1T",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OU2TCD": {
+    "id": "OU2TCD",
+    "name": "U/O Cards 2T",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OU1THCD": {
+    "id": "OU1THCD",
+    "name": "U/O Cards 1T Home",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OU2THCD": {
+    "id": "OU2THCD",
+    "name": "U/O Cards 2T Home",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OU1TACD": {
+    "id": "OU1TACD",
+    "name": "U/O Cards 1T Away",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OU2TACD": {
+    "id": "OU2TACD",
+    "name": "U/O Cards 2T Away",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "HNDCD": {
+    "id": "HNDCD",
+    "name": "H/H Cards Handicap",
+    "outcomes": {
+      "1": {
+        "name": "1"
+      },
+      "2": {
+        "name": "2"
+      }
+    },
+    "hasSbvs": true
+  },
+  "HND1TCD": {
+    "id": "HND1TCD",
+    "name": "H/H Cards Handicap 1T",
+    "outcomes": {
+      "1": {
+        "name": "1"
+      },
+      "2": {
+        "name": "2"
+      }
+    },
+    "hasSbvs": true
+  },
+  "TOTALSCD": {
+    "id": "TOTALSCD",
+    "name": "Total Cards",
+    "hasSbvs": false,
+    "outcomes": {
+      "<=3": {
+        "name": "<=3"
+      },
+      "4": {
+        "name": "4"
+      },
+      "5": {
+        "name": "5"
+      },
+      "6": {
+        "name": "6"
+      },
+      "7": {
+        "name": "7"
+      },
+      "8": {
+        "name": "8"
+      },
+      "9": {
+        "name": "9"
+      },
+      "10": {
+        "name": "10"
+      },
+      "11": {
+        "name": "11"
+      },
+      ">=11": {
+        "name": ">=11"
+      }
+    }
+  },
+  "TOTALSHCD": {
+    "id": "TOTALSHCD",
+    "name": "Total Cards Home",
+    "hasSbvs": false,
+    "outcomes": {}
+  },
+  "TOTALSACD": {
+    "id": "TOTALSACD",
+    "name": "Total Cards Away",
+    "hasSbvs": false,
+    "outcomes": {}
+  },
+  "TOTALS1TCD": {
+    "id": "TOTALS1TCD",
+    "name": "Total Cards 1T",
+    "hasSbvs": false,
+    "outcomes": {}
+  },
+  "TOTALS2TCD": {
+    "id": "TOTALS2TCD",
+    "name": "Total Cards 2T",
+    "hasSbvs": false,
+    "outcomes": {}
+  },
+  "TOTALS1THCD": {
+    "id": "TOTALS1THCD",
+    "name": "Total Cards 1T Home",
+    "hasSbvs": false,
+    "outcomes": {}
+  },
+  "TOTALS1TACD": {
+    "id": "TOTALS1TACD",
+    "name": "Total Cards 1T Away",
+    "hasSbvs": false,
+    "outcomes": {}
+  },
+  "TOTALS2THCD": {
+    "id": "TOTALS2THCD",
+    "name": "Total Cards 2T Home",
+    "hasSbvs": false,
+    "outcomes": {}
+  },
+  "TOTALS2TACD": {
+    "id": "TOTALS2TACD",
+    "name": "Total Cards 2T Away",
+    "hasSbvs": false,
+    "outcomes": {}
+  },
+  "1X2TT": {
+    "id": "1X2TT",
+    "name": "1X2 Total Shots",
+    "outcomes": {
+      "1": {
+        "name": "1",
+        "priority": 1
+      },
+      "X": {
+        "name": "X",
+        "priority": 2
+      },
+      "2": {
+        "name": "2",
+        "priority": 3
+      }
+    },
+    "hasSbvs": false
+  },
+  "OUTT": {
+    "id": "OUTT",
+    "name": "U/O Total Shots",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OUHTT": {
+    "id": "OUHTT",
+    "name": "U/O Total Shots Home",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OUATT": {
+    "id": "OUATT",
+    "name": "U/O Total Shots Away",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "1X2TP": {
+    "id": "1X2TP",
+    "name": "1X2 Shots On Target",
+    "outcomes": {
+      "1": {
+        "name": "1",
+        "priority": 1
+      },
+      "X": {
+        "name": "X",
+        "priority": 2
+      },
+      "2": {
+        "name": "2",
+        "priority": 3
+      }
+    },
+    "hasSbvs": false
+  },
+  "OUTP": {
+    "id": "OUTP",
+    "name": "U/O Shots On Target",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OUHTP": {
+    "id": "OUHTP",
+    "name": "U/O Shots On Target Home",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OUATP": {
+    "id": "OUATP",
+    "name": "U/O Shots On Target Away",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "1X2OS": {
+    "id": "1X2OS",
+    "name": "1X2 Offsides",
+    "outcomes": {
+      "1": {
+        "name": "1",
+        "priority": 1
+      },
+      "X": {
+        "name": "X",
+        "priority": 2
+      },
+      "2": {
+        "name": "2",
+        "priority": 3
+      }
+    },
+    "hasSbvs": false
+  },
+  "OUOS": {
+    "id": "OUOS",
+    "name": "U/O Offsides",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OUHOS": {
+    "id": "OUHOS",
+    "name": "U/O Offsides Home",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OUAOS": {
+    "id": "OUAOS",
+    "name": "U/O Offsides Away",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "1X2FC": {
+    "id": "1X2FC",
+    "name": "1X2 Fouls Committed",
+    "outcomes": {
+      "1": {
+        "name": "1",
+        "priority": 1
+      },
+      "X": {
+        "name": "X",
+        "priority": 2
+      },
+      "2": {
+        "name": "2",
+        "priority": 3
+      }
+    },
+    "hasSbvs": false
+  },
+  "OUFC": {
+    "id": "OUFC",
+    "name": "U/O Fouls Committed",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OUHFC": {
+    "id": "OUHFC",
+    "name": "U/O Fouls Committed Home",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  },
+  "OUAFC": {
+    "id": "OUAFC",
+    "name": "U/O Fouls Committed Away",
+    "outcomes": {
+      "U": {
+        "name": "Under"
+      },
+      "O": {
+        "name": "Over"
+      }
+    },
+    "hasSbvs": true
+  }
+}
