@@ -378,65 +378,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#main-endpoint-for-players" class="md-nav__link">
+  <a href="#market-sign-lookup-for-events" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Main Endpoint for players
+        Market &amp; Sign lookup for Events
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Main Endpoint for players">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parameters_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#responses_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Responses
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#market-sign-lookup-markets-sign" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Market &amp; Sign lookup (markets / sign)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Market &amp; Sign lookup (markets / sign)">
+    <nav class="md-nav" aria-label="Market &amp; Sign lookup for Events">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -474,6 +424,106 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-endpoint-for-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Endpoint for Players
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Endpoint for Players">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#market-sign-lookup-for-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Market &amp; Sign lookup for Players
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-endpoint-for-extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Endpoint for Extra
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Endpoint for Extra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#market-sign-lookup-for-extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Market &amp; Sign lookup for Extra
+      
+    </span>
+  </a>
   
 </li>
       
@@ -586,7 +636,7 @@
 <h1 id="rest-api-snapshot">REST API - Snapshot</h1>
 <p>The REST APIs are exposed over HTTPS https://external-api.oam.ltd/v1.</p>
 <h2 id="main-endpoint-for-events">Main Endpoint for Events</h2>
-<pre><code>GET /event/bookmaker/{bookmaker}
+<pre><code>GET /v1/event/bookmaker/{bookmaker}
 </code></pre>
 <h3 id="parameters">Parameters</h3>
 <ul>
@@ -712,16 +762,50 @@
   ]
 }
 </code></pre>
-<h2 id="main-endpoint-for-players">Main Endpoint for players</h2>
-<pre><code>GET /player/{sport}/{bookmaker}
+<h2 id="market-sign-lookup-for-events">Market &amp; Sign lookup for Events</h2>
+<p>In the Events snapshot response, the object <code>bookmakers.{bookmakerId}.markets</code> is keyed by a <strong>numeric identifier</strong> (serialized as a JSON string), e.g. <code>"1"</code>, <code>"2"</code>, <code>"9"</code>, etc.</p>
+<p>Each market contains a <code>sign</code> object, also keyed by a <strong>numeric identifier</strong> (serialized as a JSON string). This signId identifies the market outcome/selection, e.g. <code>"1"</code>, <code>"2"</code>, <code>"3"</code>.</p>
+<p>To convert these numeric IDs into human-readable names (market name and outcome names), use the <code>markets.json</code> lookup file.</p>
+<ul>
+<li>Download: <a href="../static/event_markets.json">event_markets.json</a></li>
+</ul>
+<h3 id="how-to-resolve-ids">How to resolve IDs</h3>
+<ul>
+<li><code>markets.&lt;marketId&gt;</code>: resolve the marketId (e.g. <code>"1"</code>) via the lookup to get <code>name</code>, <code>outcomes</code>, <code>sport</code>, etc.</li>
+<li><code>markets.&lt;marketId&gt;.sign.&lt;signId&gt;</code>: resolve the signId (e.g. <code>"2"</code>) within the selected market <code>outcomes</code> map to get the outcome name (e.g. <code>"Over"</code>).</li>
+</ul>
+<h3 id="example-marketid1-signid2">Example (marketId=1, signId=2)</h3>
+<p>Given: - <code>markets["1"]</code> → lookup: <code>name = "1X2"</code></p>
+<ul>
+<li><code>sign["2"]</code> → lookup within <code>outcomes["2"]</code>: <code>name = "X"</code></li>
+</ul>
+<h3 id="lookup-format-excerpt">Lookup format (excerpt)</h3>
+<pre><code class="language-json">{
+  &quot;1&quot;: {
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;1X2&quot;,
+    &quot;outcomes&quot;: {
+      &quot;1&quot;: {
+        &quot;name&quot;: &quot;1&quot;
+      },
+      &quot;2&quot;: {
+        &quot;name&quot;: &quot;X&quot;
+      },
+      &quot;3&quot;: {
+        &quot;name&quot;: &quot;2&quot;
+      }
+    },
+    &quot;hasSbvs&quot;: false,
+    &quot;sport&quot;: 1
+  }
+}
+</code></pre>
+<h2 id="main-endpoint-for-players">Main Endpoint for Players</h2>
+<pre><code>GET /v1/player/{sport}/{bookmaker}
 </code></pre>
 <h3 id="parameters_1">Parameters</h3>
 <ul>
 <li><code>sport</code>: <code>soccer</code> | <code>basketball</code> | <code>tennis</code></li>
-<li><code>bookmaker</code>: string identifier of the bookmaker</li>
-</ul>
-<h3 id="parameters_2">Parameters</h3>
-<ul>
 <li><code>bookmaker</code>: string identifier of the bookmaker</li>
 </ul>
 <h3 id="responses_1">Responses</h3>
@@ -764,46 +848,154 @@
   }
 }
 </code></pre>
-<h2 id="market-sign-lookup-markets-sign">Market &amp; Sign lookup (markets / sign)</h2>
-<p>In the Events snapshot response, the object <code>bookmakers.{bookmakerId}.markets</code> is keyed by a <strong>numeric identifier</strong> (serialized as a JSON string), e.g. <code>"1"</code>, <code>"2"</code>, <code>"9"</code>, etc.</p>
-<p>Each market contains a <code>sign</code> object, also keyed by a <strong>numeric identifier</strong> (serialized as a JSON string). This signId identifies the market outcome/selection, e.g. <code>"1"</code>, <code>"2"</code>, <code>"3"</code>.</p>
-<p>To convert these numeric IDs into human-readable names (market name and outcome names), use the <code>markets.json</code> lookup file.</p>
+<h2 id="market-sign-lookup-for-players">Market &amp; Sign lookup for Players</h2>
+<p>In the Players snapshot response, the object <code>players.{playerId}.markets</code> is keyed by a <strong>market identifier</strong> (serialized as a JSON string), e.g. <code>"Goalscorers"</code>, <code>"Points"</code>, <code>"TotalShots"</code>.</p>
+<p>Each market contains an <code>outcomes</code> object, also keyed by a <strong>market outcome identifier</strong> (serialized as a JSON string), e.g. <code>"Any"</code>, <code>"1st"</code>, <code>"O"</code>, <code>"U"</code>.</p>
+<p>To convert these IDs into human-readable names (market name and outcome names), use the player markets lookup. Example:</p>
 <ul>
-<li>Download: <a href="../static/markets.json">markets.json</a></li>
+<li>Download: <a href="../static/player_markets.json">player_markets.json</a></li>
 </ul>
-<h3 id="how-to-resolve-ids">How to resolve IDs</h3>
-<ul>
-<li><code>markets.&lt;marketId&gt;</code>: resolve the marketId (e.g. <code>"1"</code>) via the lookup to get <code>name</code>, <code>outcomes</code>, <code>sport</code>, etc.</li>
-<li><code>markets.&lt;marketId&gt;.sign.&lt;signId&gt;</code>: resolve the signId (e.g. <code>"2"</code>) within the selected market <code>outcomes</code> map to get the outcome name (e.g. <code>"Over"</code>).</li>
-</ul>
-<h3 id="example-marketid1-signid2">Example (marketId=1, signId=2)</h3>
-<p>Given: - <code>markets["1"]</code> → lookup: <code>name = "1X2"</code></p>
-<ul>
-<li><code>sign["2"]</code> → lookup within <code>outcomes["2"]</code>: <code>name = "X"</code></li>
-</ul>
-<h3 id="lookup-format-excerpt">Lookup format (excerpt)</h3>
 <pre><code class="language-json">{
-  &quot;1&quot;: {
-    &quot;id&quot;: 1,
-    &quot;name&quot;: &quot;1X2&quot;,
+  &quot;Goalscorers&quot;: {
+    &quot;id&quot;: &quot;Goalscorers&quot;,
+    &quot;name&quot;: &quot;Goalscorers&quot;,
     &quot;outcomes&quot;: {
-      &quot;1&quot;: {
-        &quot;name&quot;: &quot;1&quot;
+      &quot;Any&quot;: {
+        &quot;name&quot;: &quot;Anytime&quot;
       },
-      &quot;2&quot;: {
-        &quot;name&quot;: &quot;X&quot;
+      &quot;1st&quot;: {
+        &quot;name&quot;: &quot;First&quot;
       },
-      &quot;3&quot;: {
-        &quot;name&quot;: &quot;2&quot;
+      &quot;2o+&quot;: {
+        &quot;name&quot;: &quot;2orMore&quot;
+      },
+      &quot;3o+&quot;: {
+        &quot;name&quot;: &quot;3orMore&quot;
       }
-    },
-    &quot;hasSbvs&quot;: false,
-    &quot;sport&quot;: 1
+    }
   }
 }
 </code></pre>
+<h2 id="main-endpoint-for-extra">Main Endpoint for Extra</h2>
+<pre><code>GET /v1/extra/bookmaker/{bookmakerId}
+</code></pre>
+<h3 id="parameters_2">Parameters</h3>
 <ul>
-<li>Swagger UI: <a href="https://data-feed-oam.github.io/docs/swagger/">https://data-feed-oam.github.io/docs/swagger/</a></li>
+<li><code>bookmakerId</code>: string identifier of the bookmaker</li>
+</ul>
+<h3 id="responses_2">Responses</h3>
+<ul>
+<li><strong>200 OK</strong>: JSON with snapshot</li>
+<li><strong>400 Bad Request</strong>: invalid parameters</li>
+<li><strong>403 Forbidden</strong>: unauthorized IP</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;status&quot;: 1,
+  &quot;data&quot;: {
+    &quot;markets&quot;: {
+      &quot;1X2CN&quot;: {
+        &quot;#&quot;: {
+          &quot;1&quot;: {
+            &quot;odd&quot;: 1.77,
+            &quot;updt&quot;: 1770113164489
+          },
+          &quot;2&quot;: {
+            &quot;odd&quot;: 2.25,
+            &quot;updt&quot;: 1770113164489
+          },
+          &quot;X&quot;: {
+            &quot;odd&quot;: 8.2,
+            &quot;updt&quot;: 1770113164489
+          }
+        }
+      },
+      &quot;OUCN&quot;: {
+        &quot;6.5&quot;: {
+          &quot;U&quot;: {
+            &quot;odd&quot;: 3.95,
+            &quot;updt&quot;: 1770113164890
+          },
+          &quot;O&quot;: {
+            &quot;odd&quot;: 1.18,
+            &quot;updt&quot;: 1770113164890
+          }
+        },
+        &quot;7.5&quot;: {
+          &quot;U&quot;: {
+            &quot;odd&quot;: 2.75,
+            &quot;updt&quot;: 1770113164890
+          },
+          &quot;O&quot;: {
+            &quot;odd&quot;: 1.35,
+            &quot;updt&quot;: 1770113164890
+          }
+        },
+        &quot;8.5&quot;: {
+          &quot;U&quot;: {
+            &quot;odd&quot;: 2.05,
+            &quot;updt&quot;: 1770113164890
+          },
+          &quot;O&quot;: {
+            &quot;odd&quot;: 1.62,
+            &quot;updt&quot;: 1770113164890
+          }
+        },
+        &quot;9.5&quot;: {
+          &quot;U&quot;: {
+            &quot;odd&quot;: 1.63,
+            &quot;updt&quot;: 1770113164890
+          },
+          &quot;O&quot;: {
+            &quot;odd&quot;: 2.05,
+            &quot;updt&quot;: 1770113164890
+          }
+        },
+        &quot;10.5&quot;: {
+          &quot;U&quot;: {
+            &quot;odd&quot;: 1.38,
+            &quot;updt&quot;: 1770113164890
+          },
+          &quot;O&quot;: {
+            &quot;odd&quot;: 2.65,
+            &quot;updt&quot;: 1770113164890
+          }
+        },
+        &quot;11.5&quot;: {
+          &quot;U&quot;: {
+            &quot;odd&quot;: 1.22,
+            &quot;updt&quot;: 1770113164890
+          },
+          &quot;O&quot;: {
+            &quot;odd&quot;: 3.5,
+            &quot;updt&quot;: 1770113164890
+          }
+        },
+        &quot;12.5&quot;: {
+          &quot;U&quot;: {
+            &quot;odd&quot;: 1.12,
+            &quot;updt&quot;: 1770113164890
+          },
+          &quot;O&quot;: {
+            &quot;odd&quot;: 4.8,
+            &quot;updt&quot;: 1770113164890
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<h2 id="market-sign-lookup-for-extra">Market &amp; Sign lookup for Extra</h2>
+<p>In the Extra snapshot response, the object <code>data.markets</code> is keyed by a <strong>market identifier</strong> (serialized as a JSON string), e.g. <code>"1X2CN"</code>, <code>"OUCN"</code>.</p>
+<p>Each market contains a line key (e.g. <code>"#"</code>, <code>"6.5"</code>, <code>"7.5"</code>) and then outcome identifiers (serialized as JSON strings), e.g. <code>"1"</code>, <code>"2"</code>, <code>"X"</code>, <code>"O"</code>, <code>"U"</code>.</p>
+<p>To convert these IDs into human-readable names (market name and outcome names), use the <code>extra_markets.json</code> lookup file.</p>
+<ul>
+<li>
+<p>Download: <a href="../static/extra_markets.json">extra_markets.json</a></p>
+</li>
+<li>
+<p>Swagger UI: <a href="https://data-feed-oam.github.io/docs/swagger/">https://data-feed-oam.github.io/docs/swagger/</a></p>
+</li>
 </ul>
 
 

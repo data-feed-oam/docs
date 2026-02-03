@@ -1,0 +1,238 @@
+{
+  "Goalscorers": {
+    "id": "Goalscorers",
+    "name": "Goalscorers",
+    "outcomes": {
+      "Any": {
+        "name": "Anytime"
+      },
+      "1st": {
+        "name": "First"
+      },
+      "2o+": {
+        "name": "2orMore"
+      },
+      "3o+": {
+        "name": "3orMore"
+      }
+    }
+  },
+  "Halves": {
+    "id": "Halves",
+    "name": "Halves",
+    "outcomes": {
+      "AnyHT": {
+        "name": "AnyHT"
+      },
+      "BHlv": {
+        "name": "BothHalves"
+      }
+    }
+  },
+  "Assist/Card": {
+    "id": "Assist/Card",
+    "name": "Assist/Card",
+    "outcomes": {
+      "Asst": {
+        "name": "Assist"
+      },
+      "Cd": {
+        "name": "Card"
+      },
+      "1stCd": {
+        "name": "FirstCard"
+      }
+    }
+  },
+  "FlsR": {
+    "id": "FlsR",
+    "name": "Fouls Received",
+    "outcomes": {
+      "O": {
+        "name": "Over"
+      },
+      "U": {
+        "name": "Under"
+      }
+    },
+    "sbv": true
+  },
+  "FlsC": {
+    "id": "FlsC",
+    "name": "Fouls Committed",
+    "outcomes": {
+      "O": {
+        "name": "Over"
+      },
+      "U": {
+        "name": "Under"
+      }
+    },
+    "sbv": true
+  },
+  "Tck": {
+    "id": "Tck",
+    "name": "Tackles",
+    "outcomes": {
+      "O": {
+        "name": "Over"
+      },
+      "U": {
+        "name": "Under"
+      }
+    },
+    "sbv": true
+  },
+  "Pass": {
+    "id": "Pass",
+    "name": "Passes",
+    "outcomes": {
+      "O": {
+        "name": "Over"
+      },
+      "U": {
+        "name": "Under"
+      }
+    },
+    "sbv": true
+  },
+  "ShotsOnTarget": {
+    "id": "ShotsOnTarget",
+    "name": "Shots On Target",
+    "outcomes": {
+      "1SOT": {
+        "name": "1 TP"
+      },
+      "2SOT": {
+        "name": "2 TP"
+      },
+      "3SOT": {
+        "name": "3 TP"
+      },
+      "4SOT": {
+        "name": "4 TP"
+      },
+      "5SOT": {
+        "name": "5 TP"
+      }
+    }
+  },
+  "TotalShots": {
+    "id": "TotalShots",
+    "name": "Total Shots",
+    "outcomes": {
+      "1TS": {
+        "name": "1 TT"
+      },
+      "2TS": {
+        "name": "2 TT"
+      },
+      "3TS": {
+        "name": "3 TT"
+      },
+      "4TS": {
+        "name": "4 TT"
+      },
+      "5TS": {
+        "name": "5 TT"
+      },
+      "6TS": {
+        "name": "6 TT"
+      },
+      "7TS": {
+        "name": "7 TT"
+      }
+    }
+  },
+  "Points": {
+    "id": "Points",
+    "name": "Points",
+    "outcomes": {
+      "O": {
+        "name": "Over"
+      },
+      "U": {
+        "name": "Under"
+      }
+    },
+    "sbv": true
+  },
+  "Assists": {
+    "id": "Assists",
+    "name": "Assists",
+    "outcomes": {
+      "O": {
+        "name": "Over"
+      },
+      "U": {
+        "name": "Under"
+      }
+    },
+    "sbv": true
+  },
+  "Rebounds": {
+    "id": "Rebounds",
+    "name": "Rebounds",
+    "outcomes": {
+      "O": {
+        "name": "Over"
+      },
+      "U": {
+        "name": "Under"
+      }
+    },
+    "sbv": true
+  },
+  "3Points": {
+    "id": "3Points",
+    "name": "3Points",
+    "outcomes": {
+      "O": {
+        "name": "Over"
+      },
+      "U": {
+        "name": "Under"
+      }
+    },
+    "sbv": true
+  },
+  "Steals": {
+    "id": "Steals",
+    "name": "Steals",
+    "outcomes": {
+      "O": {
+        "name": "Over"
+      },
+      "U": {
+        "name": "Under"
+      }
+    },
+    "sbv": true
+  },
+  "Turnovers": {
+    "id": "Turnovers",
+    "name": "Turnovers",
+    "outcomes": {
+      "O": {
+        "name": "Over"
+      },
+      "U": {
+        "name": "Under"
+      }
+    },
+    "sbv": true
+  },
+  "Blocks": {
+    "id": "Blocks",
+    "name": "Blocks",
+    "outcomes": {
+      "O": {
+        "name": "Over"
+      },
+      "U": {
+        "name": "Under"
+      }
+    },
+    "sbv": true
+  }
+}
