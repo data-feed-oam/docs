@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -234,6 +234,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -250,6 +268,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-bookmakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available bookmakers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -414,6 +462,12 @@
 <li>Call the REST APIs to download the initial snapshot  </li>
 <li>Connect to RabbitMQ to receive real-time updates  </li>
 </ol>
+<h2 id="available-bookmakers">Available bookmakers</h2>
+<p>All endpoints that require a <code>bookmaker</code> / <code>bookmakerId</code> parameter expect the <strong>bookmaker identifier</strong> (numeric ID, serialized as a string in the URL/path), not the bookmaker name.</p>
+<p>To map <code>id → name</code> (and see the full list of supported bookmakers), use the dedicated lookup file:</p>
+<ul>
+<li>Download: <a href="../static/bookmakers.json">bookmakers.json</a></li>
+</ul>
 
 
 
